@@ -8,6 +8,7 @@
 		<title>ArchLearn - Login</title>
 	</head>
 	<body>
+
 		<?php
 			//Si la sesión está activa, enviar a menú principal
 			if(isset($_SESSION['name'])){
@@ -40,26 +41,76 @@
 				}
 			}
 		?>
-		<div id="session_forms">
-			<h2>Welcome to ArchLearn</h2>
-		<div id="login_div">
-			Log In:<br>
-			<form action="session_manager.php" name="login" id="login" accept-charset="UTF-8" method="POST" enctype="multipart/form-data">
-				<fieldset>
-					<p>
-						<label for="login_user_input"><b>Username: </b></label>
-						<input type="text" name="login_user_input" id="login_user_input" size="10" maxlength="20">
-					</p>
-					<p>
-						<label for="login_password_input"><b>Contraseña: </b></label>
-						<input type="password" name="login_password_input" id="login_password_input" size="10" maxlength="20">
-					</p>
-					<p>
-						<input type="submit" value="Log In">
-					</p>
-				</fieldset>
-			</form>
+
+		<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+
+		<div class="" id="loginModal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3>Have an Account?</h3>
 		</div>
-		new account? <a href="register.php">Sign Up</a>.
+		<div class="modal-body">
+			<div class="well">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+					<li><a href="#create" data-toggle="tab">Create Account</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane active in" id="login">
+						<form  action="session_manager.php" name="login" id="login" accept-charset="UTF-8" method="POST" enctype="multipart/form-data" class="form-horizontal">
+							<fieldset>
+								<div id="legend">
+									<legend class="">Login</legend>
+								</div>    
+								<div class="control-group">
+									<!-- Username -->
+									<label class="control-label"  for="username">Username</label>
+									<div class="controls">
+										<input name="login_user_input" id="login_user_input" size="10" maxlength="10" type="text" placeholder="" class="input-xlarge">
+									</div>
+								</div>
+							
+								<div class="control-group">
+									<!-- Password-->
+									<label class="control-label" for="password">Password</label>
+									<div class="controls">
+										<input  type="password" name="login_password_input" id="login_password_input" size="10" maxlength="20" placeholder="" class="input-xlarge">
+									</div>
+								</div>
+							
+							
+								<div class="control-group">
+									<!-- Button -->
+									<div class="controls">
+										<button class="btn btn-success">Login</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>                
+					</div>
+					<div class="tab-pane fade" id="create">
+						<form id="tab">
+							<label>Username</label>
+							<input type="text" value="" class="input-xlarge" name="">
+							<label>Password</label>
+							<input type="text" value="" class="input-xlarge">
+							<label>First Name</label>
+							<input type="text" value="" class="input-xlarge">
+							<label>Last Name</label>
+							<input type="text" value="" class="input-xlarge">
+							<label>Email</label>
+							<input type="text" value="" class="input-xlarge">
+							<div>
+								<button class="btn btn-primary">Create Account</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 	</body>
 </html>
