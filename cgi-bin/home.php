@@ -13,7 +13,7 @@
 		<title>ArchLearn - Home</title>
 	</head>
 	<body>
-		Bienvenid@ <?php echo $_SESSION['name'];?>.<br>
+		Bienvenid@ <?php echo $_SESSION['name']." ".$_SESSION['last_name'];?>.<br>
 		<a href="login/session_manager.php?logout=yes">cerrar sesión</a>
 		<h1>TravelSyst</h1>
 		<table border='1' width='800'>
@@ -30,12 +30,11 @@
 					<div class="menu">
 						<ol>
 							<?php
-								$sql = sprintf("SELECT id, name FROM element_types ORDER BY id");
-								$result = $db->query($sql);
-								while( $row = $result->fetch_assoc() ){
-									echo "<li><a href='section.php?section=".$row['id']."'>".$row['name']."</a>";
-								}
-								if(isset($_SESSION['user_type_id']) && $_SESSION['user_type_id'] == 1){
+								echo "<li><a href='info/profile.php'>Profile</a>";
+								echo "<li><a href='course/new_course.php'>Start Course</a>";
+								echo "<li><a href='course/continue.php'>Continue Course</a>";
+								echo "<li><a href='info/history.php'>History</a>";
+								if(isset($_SESSION['type']) && $_SESSION['type'] == 1){
 									echo "<li><a href='administrate.php'>Administrar</a>";
 								}
 							?>		
@@ -44,7 +43,6 @@
 				</td>
 				<td>
 					<b>Hemos inaugurado nuestro sitio!</b>
-					<br><img src="../src/img/gandalf.jpg"><br><br>
 					Bienvenido a nuestro sitio, le traemos lo mejor de la Tierra Media para planificar su viaje. Saludos
 				</td>
 			</tr>
