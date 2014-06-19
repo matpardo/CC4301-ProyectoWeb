@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <?php
  session_start();
+
+ if(isset($_SESSION['name'])){
+		header('Location: home.php');
+	}
+	include_once('../db/archlearn_dbconfig.php');
+	$db = DbConfig::getConnection();
 ?>
 <html>
 	<head>
@@ -90,17 +96,17 @@
 						</form>                
 					</div>
 					<div class="tab-pane fade" id="create">
-						<form id="tab">
-							<label>Username</label>
-							<input type="text" value="" class="input-xlarge" name="">
+						<form action="register_submit.php" name="register" id="register" accept-charset="UTF-8" method="POST" enctype="multipart/form-data">
+							<label>Nickname</label>
+							<input type="text" name="register_user_input" id="register_user_input" size="10" maxlength="10" class="input-xlarge">
 							<label>Password</label>
-							<input type="text" value="" class="input-xlarge">
+							<input type="password" name="register_password_input" id="register_password_input" size="10" maxlength="10" class="input-xlarge">
 							<label>First Name</label>
-							<input type="text" value="" class="input-xlarge">
+							<input type="text" name="register_first_name_input" id="register_first_name_input" size="20" maxlength="59" class="input-xlarge">
 							<label>Last Name</label>
-							<input type="text" value="" class="input-xlarge">
+							<input type="text" name="register_last_name_input" id="register_last_name_input" size="20" maxlength="255" class="input-xlarge">
 							<label>Email</label>
-							<input type="text" value="" class="input-xlarge">
+							<input type="text" name="register_email_input" id="register_email_input" size="20" maxlength="255">
 							<div>
 								<button class="btn btn-primary">Create Account</button>
 							</div>
