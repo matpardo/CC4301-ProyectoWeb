@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-	include_once('archlearn_dbconfig.php');
+	include_once('../db/archlearn_dbconfig.php');
 	$db = DbConfig::getConnection();
 	if(!isset($_SESSION['name']) && $_POST){
 	
