@@ -22,7 +22,8 @@
 				echo "You want to start a new one? <a href='new_course_unit.php'>YES!</a>";
 			}
 			else{
-				header('Location: new_course_unit.php');
+				echo "REDIRECT TO <a href='new_course_unit.php'"
+				//header('Location: new_course_unit.php');
 			}
 		?>
 	</body>
