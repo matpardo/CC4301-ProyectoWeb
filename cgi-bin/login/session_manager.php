@@ -8,7 +8,7 @@
 		if(isset($_POST['login_user_input']) && 0 < strlen($_POST['login_user_input'])){
 			if(isset($_POST['login_password_input']) && 0 < strlen($_POST['login_password_input'])){
 			
-				$sql = sprintf("SELECT id, username, password, user_type_id, first_name, last_name FROM users WHERE username='%s'", 
+				$sql = sprintf("SELECT id, nickname, password, type, name, lastname, idUnit FROM users WHERE nickname='%s'", 
 					$db->real_escape_string($_POST['login_user_input']));
 				$result = $db->query($sql);
 				$row = $result->fetch_assoc();
@@ -18,10 +18,12 @@
 			
 				if($_POST['login_password_input'] == $row['password']){
 			
-					$_SESSION['name'] = $row['username'];
-					$_SESSION['user_type_id'] = $row['user_type_id'];
+					$_SESSION['name'] = $row['nickname'];
+					$_SESSION['type'] = $row['type'];
 					$_SESSION['id'] = $row['id'];
-					$_SESSION['real_name'] = $row['first_name']." ".$row['last_name'];
+					$_SESSION['first_name'] = $row['name'];
+					$_SESSION['last_name'] = $row['lastname'];
+					$_SESSION['unit'] = $row['idUnit'];
 			
 					echo "Session started! Welcome: ".$_SESSION['name']."<br>Redirecting...";
 				} else {
