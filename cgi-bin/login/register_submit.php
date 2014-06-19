@@ -91,12 +91,48 @@
 	}
 
 			if($register_flag){
-				echo "<br>El registro se ha realizado exitosamente.<br>
-				<a href='login.php'>Volver a login</a>.";
+				echo " 
+				<head>
+					<link href='css/bootstrap.min.css' rel='stylesheet' media='screen'>
+				</head>
+				<body>
+				 <script src='js/bootstrap.min.js'></script>
+				<div class='container'>
+							<div class='row clearfix'>
+								<div class='col-md-12 column'>
+									<div class='jumbotron'>
+									<h1>
+										Registration was succesfull!
+									</h1>
+									<p>
+										<a href='login.php'>Go back to login.</a>
+									</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				</body>";
 			} else {
-				echo "<br>El registro ha fallado.<br>
-				<a href='register.php'>Volver a registro</a>.<br>
-				<a href='login.php'>Volver a login</a>.";
+				echo "<head>
+					<link href='css/bootstrap.min.css' rel='stylesheet' media='screen'>
+				</head>
+				<body>
+				 <script src='js/bootstrap.min.js'></script>
+				<div class='container'>
+							<div class='row clearfix'>
+								<div class='col-md-12 column'>
+									<div class='jumbotron'>
+									<h1>
+										Registration has failed!
+									</h1>
+									<p>
+										<a href='login.php'>Go back to login.</a>
+									</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				</body>";
 			}
 		?>
 	</body>
