@@ -12,7 +12,7 @@
 		<?php
 			//Si la sesión está activa, enviar a menú principal
 			if(isset($_SESSION['name'])){
-				header('Location: home.php');
+				header('Location: ../home.php');
 			}
 			if($_GET){
 				if(isset($_GET['no_user']) && $_GET['no_user']==true){

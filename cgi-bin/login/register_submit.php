@@ -2,7 +2,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['name'])){
-		header('Location: home.php');
+		header('Location: ../home.php');
 	}
 	include_once('../db/archlearn_dbconfig.php');
 	$db = DbConfig::getConnection();
@@ -58,13 +58,13 @@
 		if(isset($_POST['register_last_name_input']) && strlen($_POST['register_last_name_input']) > 0 && strlen($_POST['register_last_name_input']) <= 255){
 			$register_last_name = htmlspecialchars($_POST['register_last_name_input']);
 		} else {
-			echo "Error: Apellido inválido.<br>";
+			echo "Error: Invalid last name.<br>";
 		}
 		//Verificación de correctitud del mail ($register_email_input)
 		if(isset($_POST['register_email_input']) && preg_match($email_pattern, $_POST['register_email_input'])){
 			$register_email = htmlspecialchars($_POST['register_email_input']); 
 		} else {
-			echo "Error: Mail inválido.<br>";
+			echo "Error: Invalid Mail.<br>";
 		}
 		if($register_user != NULL 
 			&& $register_password != NULL 
@@ -92,11 +92,11 @@
 
 			if($register_flag){
 				echo "<br>El registro se ha realizado exitosamente.<br>
-				<a href='../login/login.php'>Volver a login</a>.";
+				<a href='login.php'>Volver a login</a>.";
 			} else {
 				echo "<br>El registro ha fallado.<br>
 				<a href='register.php'>Volver a registro</a>.<br>
-				<a href='../login/login.php'>Volver a login</a>.";
+				<a href='login.php'>Volver a login</a>.";
 			}
 		?>
 	</body>
