@@ -21,13 +21,13 @@
 
 
 		if(isset($_POST['id']) && is_numeric($_POST['id']) && strlen($_POST['id']) <= 11){
-			$register_last_name = htmlspecialchars($_POST['id']);
+			$unit_id = htmlspecialchars($_POST['id']);
 		} else {
 			echo "Error: Invalid unit id.<br>";
 		}
 
 		if($user_id != NULL 
-			&& $unit != NULL 
+			&& $unit_id != NULL 
 			){
 				$sql = sprintf("UPDATE users 
 								SET idUnit = %d WHERE id=%d;",
