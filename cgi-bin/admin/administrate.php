@@ -29,7 +29,8 @@
 			}
 			if(isset($_SESSION['type']) && ($_SESSION['type'] == 3)){
 				echo "
-					<li><a href='manage_user.php'>Manage userse</a></li>
+					<li><a href='manage_user.php'>Manage users</a></li>
+					<li><a href='add_unit.php'>Delete Experience</a></li>
 				";
 			}
 		?>
