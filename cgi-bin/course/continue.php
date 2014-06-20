@@ -21,7 +21,7 @@
 
       		.container {
         		width: auto;
-        		max-width: 680px;
+        		
       		}
       		.container .credit {
         		margin: 20px 0;
