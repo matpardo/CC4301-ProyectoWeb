@@ -76,11 +76,11 @@
     	      	<div class="navbar-inner">
 	    	        <div class="container">
             			<ul class="nav">
-                			<li class="active"><a href="#">Home</a></li>
-                			<li><a href="info/profile.php">Profile</a></li>
-                			<li><a href="course/new_course.php">Start new course</a></li>
-                			<li><a href="course/continue.php">Continue course</a></li>
-                			<li><a href="info/records.php">Records</a></li>
+                			<li><a href="../home.php">Home</a></li>
+                			<li><a href="../info/profile.php">Profile</a></li>
+                			<li class="active"><a href="new_course.php">Start new course</a></li>
+                			<li><a href="continue.php">Continue course</a></li>
+                			<li><a href="../info/records.php">Records</a></li>
                 			<li><a href=<?php if(isset($_SESSION['type']) && ($_SESSION['type'] == 3 || $_SESSION['type'] == 2)){ echo "'administrate.php'>";} else {echo "'#'>";}?>Administrate</a></li>
               			</ul>
             		</div>
