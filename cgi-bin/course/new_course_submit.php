@@ -20,8 +20,8 @@
 		$unit_id = NULL;
 
 
-		if(isset($_POST['id']) && is_numeric($_POST['id']) && strlen($_POST['id']) <= 11){
-			$unit_id = htmlspecialchars($_POST['id']);
+		if(isset($_POST['new_unit']) && is_numeric($_POST['new_unit']) && strlen($_POST['new_unit']) <= 11){
+			$unit_id = htmlspecialchars($_POST['new_unit']);
 		} else {
 			echo "Error: Invalid unit id.<br>";
 		}
