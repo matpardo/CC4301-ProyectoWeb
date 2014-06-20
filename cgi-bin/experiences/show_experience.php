@@ -102,12 +102,28 @@
         <?php
         include 'tutor.php';
         $id = tutor();
-			     $sql = sprintf("SELECT name, idEvaluation, idResource  FROM experience WHERE idExperience='%s'", 
+			     $sql = sprintf("SELECT name, idEvaluation, idResource  FROM experience WHERE idExperience=%d", 
 			     $id);
 			     $result = $db->query($sql);
            $row = $result->fetch_assoc();
 
-           //FALTA FUNCION GENERATE AQUI !!!!!! 
+           if($row['idResource']==1){
+            include 'ResourceVideo.php';
+           } elseif($row['idResource']==2){
+            include 'ResourceImage.php';
+           } elseif($row['idResource']==3){
+            include 'ResourceFile.php';
+           }
+
+           generateResourceCode($id);
+
+
+           if($row['idEvaluation']==1){
+            include 'EvaluationMultiple.php';
+           } elseif($row['idEvaluation']==2){
+            include 'EvaluationFill.php';
+           }
+           generateTypeCode($id);
            
 		      ?>
       </div>
