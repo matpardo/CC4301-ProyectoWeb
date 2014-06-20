@@ -11,7 +11,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ArchLearn - Continue Course</title>
-		<link href="css/bootstrapHome.css" rel="stylesheet">
+		<link href="../css/bootstrapHome.css" rel="stylesheet">
     	<style type="text/css">
       		body {
         		padding-top: 20px;
@@ -64,7 +64,7 @@
         		border-radius: 0 3px 3px 0;
       		}
     	</style>
-    	<link href="css/bootstrap-responsiveHome.css" rel="stylesheet">
+    	<link href="../css/bootstrap-responsiveHome.css" rel="stylesheet">
 	</head>
 	<body>
 
