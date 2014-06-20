@@ -95,7 +95,7 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1>ArchLearn - Courses</h1>
+          <h1>ArchLearn - Profile</h1>
         </div>
         <p class="lead">Profile</p>
         <p> This is your info</p>
