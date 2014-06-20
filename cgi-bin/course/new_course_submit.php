@@ -15,7 +15,7 @@
 	<body>
 <?php
 	if($_POST){
-		// Parámetros del POST para addmaster.php
+
 		$user_id = $_SESSION['id'];
 		$unit_id = NULL;
 
@@ -38,6 +38,7 @@
 				}
 				echo "REDIRECT New Unit added <a href='continue.php'>OK!</a>";
 		}
+	}
 		?>
 	</body>
 </html>
