@@ -113,7 +113,7 @@
 		<p>Password: <?php echo $row['password']?> </p>
 		<p>Name: <?php echo $row['name']?> </p>
 		<p>Lastname: <?php echo $row['lastname']?> </p>
-		<p>Type of user: <?php if($row['type'] == 1 ){echo "Student";} else {if ($row['type'] == 2){echo "Publisher";} else {echo "Administrator";} }) ?> </p>
+		<p>Type of user: <?php if($row['type'] == 1 ){echo "Student";} else {if ($row['type'] == 2){echo "Publisher";} else {echo "Administrator";} } ?> </p>
         
       </div>
     </div>
