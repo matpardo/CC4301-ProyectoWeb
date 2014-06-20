@@ -36,6 +36,7 @@
 					echo "Table edit failed: (" . $db->errno . ") " . $db->error ."<br/>";
 					return;
 				}
+				$_SESSION['unit']=$unit_id;
 				echo "REDIRECT New Unit added <a href='continue.php'>OK!</a>";
 		}
 	}

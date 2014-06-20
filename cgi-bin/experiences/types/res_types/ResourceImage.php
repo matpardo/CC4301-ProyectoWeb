@@ -7,6 +7,6 @@
 			FROM resourceimage WHERE idExperience=%d",$id);
 		$result = $db->query($sql);
 		$row = $result->fetch_assoc();
-		echo "<img src='".$row['link']"'>";
+		echo "<img src='".$row['link']."'>";
 	}
 ?>

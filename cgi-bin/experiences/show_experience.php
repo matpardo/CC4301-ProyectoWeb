@@ -100,30 +100,85 @@
         <p class="lead">Do the following experience chosen by your tutor.</p>
         <hr>
         <?php
-        include 'tutor.php';
-        $id = tutor();
+          function tutor($db){
+            $sql = sprintf("SELECT idExperience FROM experience ORDER BY id DESC");
+            $result = $db->query($sql);
+            $row = $result->fetch_assoc();
+
+            return rand(1,$row['idExperience']);
+          }
+           $id = 1;
 			     $sql = sprintf("SELECT name, idEvaluation, idResource  FROM experience WHERE idExperience=%d", 
 			     $id);
 			     $result = $db->query($sql);
            $row = $result->fetch_assoc();
 
-           if($row['idResource']==1){
-            include 'ResourceVideo.php';
-           } elseif($row['idResource']==2){
-            include 'ResourceImage.php';
-           } elseif($row['idResource']==3){
-            include 'ResourceFile.php';
+           function generateResourceCode($id,$db,$type){
+            if($type == 1){
+              $sql = sprintf("SELECT idVideo, link 
+                FROM resourcevideo WHERE idExperience=%d",$id);
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+              echo "<iframe width='560' height='315' src='".$row['link']."' frameborder='0' allowfullscreen></iframe>";
+            } elseif($type == 2){
+              $sql = sprintf("SELECT idImage, link 
+                FROM resourceimage WHERE idExperience=%d",$id);
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+             echo "<img src='".$row['link']."'>";
+            }
            }
 
-           generateResourceCode($id);
+           generateResourceCode($id,$db,$row['idResource']);
 
+          function generateTypeCode($id,$db,$type){
+            if($type == 1){
+              $sql = sprintf("SELECT idMultiple, question, idExperience, option1, option2, option3, answer 
+                  FROM evaluationmultiple WHERE idExperience=%d",$id);
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+    echo "Question: ".$row['question']."<br>
+       <form action='evaluate_Multiple' name='Multiple' id='Multiple' accept-charset='UTF-8' method='POST' enctype='multipart/form-data' class='navbar-form pull-left'>
+      <fieldset>
+        <input type='hidden' id='id_exp' name='id_exp' value='".$id."'>
+        <p>
+          <label for='user_answer'><b>Choose one: </b></label>
+          <input type='checkbox' name='user_answer'>".$row['option1']."</input><br>
+          <input type='checkbox' name='user_answer'>".$row['option2']."</input><br>
+          <input type='checkbox' name='user_answer'>".$row['option3']."</input><br>
+        </p>
+        <p>
+          <button type='submit' class='btn'>Answer!</button>
+          
+        </p>
+      </fieldset>
+    </form>";
 
-           if($row['idEvaluation']==1){
-            include 'EvaluationMultiple.php';
-           } elseif($row['idEvaluation']==2){
-            include 'EvaluationFill.php';
-           }
-           generateTypeCode($id);
+            }elseif($type==2){
+              $sql = sprintf("SELECT idFill, question, idExperience, string1, word, string2 
+      FROM evaluationfill WHERE idExperience=%d",$id);
+    $result = $db->query($sql);
+    $row = $result->fetch_assoc();
+    echo "Write the word in the blanket: <br>
+      <b>".$row['string1']."__________".$row['string2']."
+       <form action='evaluate_Fill.php' name='Fill' id='Fill' accept-charset='UTF-8' method='POST' enctype='multipart/form-data' class='navbar-form pull-left'>
+      <fieldset>
+        <input type='hidden' id='id_exp' name='id_exp' value='".$id."'>
+        <p>
+          <label for='user_answer'><b>Write the word: </b></label>
+          <input type='text' name='user_answer' id='user_answer' size='10' maxlength='255' class='span2'>
+        </p>
+        <p>
+          <button type='submit' class='btn'>Answer!</button>
+          
+        </p>
+      </fieldset>
+    </form>";
+
+            }
+          }
+
+           generateTypeCode($id,$db,$row['idEvaluation']);
            
 		      ?>
       </div>

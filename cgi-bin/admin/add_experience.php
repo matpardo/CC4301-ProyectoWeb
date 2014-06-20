@@ -130,12 +130,12 @@
 				</p>
 				<p>
 					<label for="source"><b>URL Resource: </b></label>
-					<input type="text" name="source" id="source" size="10" maxlength="11" class="span2">
+					<input type="text" name="source" id="source" size="10" maxlength="255" class="span2">
 				</p>
 				<p>
 					<label for="experience_father"><b>SubExp of?: </b></label>
 					<select id="experience_father" name="experience_father">
-						<opton value="0">None</option>
+						<option value="0">None</option>
 					<?php
 						$sql = sprintf("SELECT idExperience, name FROM experience ORDER BY name");
 						$result = $db->query($sql);
@@ -146,7 +146,7 @@
 					</select>
 				</p>
 				<p>
-					<label for="max_calification"><b>Experience Name: </b></label>
+					<label for="max_calification"><b>Max Calification: </b></label>
 					<input type="text" name="max_calification" id="max_calification" size="1" maxlength="11" class="span2">
 				</p>
 				<p>

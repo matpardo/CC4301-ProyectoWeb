@@ -83,7 +83,7 @@
                 			<li><a href="../course/new_course.php">Start new course</a></li>
                 			<li><a href="../course/continue.php">Continue course</a></li>
                 			<li><a href="records.php">Records</a></li>
-                			<li><a href=<?php if(isset($_SESSION['type']) && ($_SESSION['type'] == 3 || $_SESSION['type'] == 2)){ echo "'..admin/administrate.php'>";} else {echo "'#'>";}?>Administrate</a></li>
+                			<li><a href=<?php if(isset($_SESSION['type']) && ($_SESSION['type'] == 3 || $_SESSION['type'] == 2)){ echo "'../admin/administrate.php'>";} else {echo "'#'>";}?>Administrate</a></li>
               			</ul>
             		</div>
           		</div>

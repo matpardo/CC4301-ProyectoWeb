@@ -14,7 +14,7 @@
 				<input type='hidden' id='id_exp' name='id_exp' value='".$id."'>
 				<p>
 					<label for='user_answer'><b>Write the word: </b></label>
-					<<input type='text' name='user_answer' id='user_answer' size='10' maxlength='255' class='span2'>
+					<input type='text' name='user_answer' id='user_answer' size='10' maxlength='255' class='span2'>
 				</p>
 				<p>
 					<button type='submit' class='btn'>Answer!</button>
