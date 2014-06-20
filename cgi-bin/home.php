@@ -92,7 +92,7 @@
 
       <div class="masthead">
         <h3 class="muted">Bienvenid@ <?php echo $_SESSION['name']." ".$_SESSION['last_name'];?>. </h3>
-        <h3 class="muted"> <a href="login/session_manager.php?logout=yes">cerrar sesión</a> </h3>
+        <h4 class="muted"> <a href="login/session_manager.php?logout=yes">cerrar sesión</a> </h3>
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
