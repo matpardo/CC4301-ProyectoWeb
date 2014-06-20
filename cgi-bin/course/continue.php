@@ -99,7 +99,7 @@
 		<?php
 			if(isset($_SESSION['unit'])){
 				echo "You are in the unit ".$_SESSION['unit'];
-				echo "<form action='experience_generator.php' name='continue' id='continue' method='POST' class='navbar-form pull-left'>
+				echo "<form action='../experiences/show_experience.php' name='continue' id='continue' method='POST' class='navbar-form pull-left'>
 					<input type='hidden' id='user_id' name='user_id' value='".$_SESSION['id']."'>
 					<button type='submit' value='Proceed'class='btn'>Proceed</button></form>";
 			}
