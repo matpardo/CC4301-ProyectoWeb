@@ -102,7 +102,8 @@
 				echo "Do you want to start a new course? <a href='new_course_unit.php'>YES!</a>";
 			}
 			else{
-				echo "REDIRECT TO <a href='new_course_unit.php'";
+				echo "REDIRECT TO <a href='new_course_unit.php'>here</a>";
+				//header('Location: new_course_unit.php');
 			}
 		?></p>
       </div>
